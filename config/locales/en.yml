@@ -29,15 +29,27 @@
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
 
+# en:
+#   number:
+#     currency:
+#       format:
+#       delimiter: ","
+#       separator: "."
+
+# # falling back to
+# number:
+#   format:
+#     delimiter: ","
+#     separator: "."
+
 en:
   number:
     currency:
       format:
-      delimiter: ","
-      separator: "."
-
-# falling back to
-number:
-  format:
-    delimiter: ","
-    separator: "."
+        format: "%u%n"  # This sets the format to display the currency symbol followed by the amount
+        unit: "$"       # This sets the currency symbol to the dollar sign
+        delimiter: ","  # Thousands delimiter
+        separator: "."  # Decimal separator
+        precision: 2    # Number of decimal places
+        significant: false
+        strip_insignificant_zeros: false
