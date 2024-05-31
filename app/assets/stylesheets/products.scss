@@ -58,7 +58,7 @@ main section.categories-show {
           color: white; /* Ensure the text color doesn't change on hover */
         }
       }
-        
+
       img {
         width: 100%;
         height: auto;
@@ -100,4 +100,16 @@ main section.categories-show {
       }
     }
   }
+}
+/* Custom styles for order details table */
+.orders-show .table th,
+.orders-show .table td {
+  vertical-align: middle; /* Vertically align text in the middle */
+  text-align: center; /* Center align text horizontally */
+  padding: 1em; /* Add padding for better spacing */
+}
+
+.orders-show .table th {
+  background-color: #f8f9fa; /* Light background color for header */
+  font-weight: bold; /* Make header text bold */
 }
