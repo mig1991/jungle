@@ -3169,3 +3169,79 @@ Processing by AboutController#index as HTML
 Completed 200 OK in 42ms (Views: 38.7ms | ActiveRecord: 0.7ms | Allocations: 13995)
 
 
+Started GET "/about" for ::1 at 2024-06-02 15:31:44 -0700
+Processing by AboutController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering about/index.html.erb within layouts/application
+  Rendered about/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 38)
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/_top_nav.html.erb:37
+  Rendered layouts/_top_nav.html.erb (Duration: 3.2ms | Allocations: 1392)
+  Rendered layout layouts/application.html.erb (Duration: 27.5ms | Allocations: 11180)
+Completed 200 OK in 29ms (Views: 27.4ms | ActiveRecord: 0.7ms | Allocations: 11613)
+
+
+Started GET "/categories/1" for ::1 at 2024-06-02 15:31:47 -0700
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/show.html.erb within layouts/application
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE "products"."category_id" = $1[0m  [["category_id", 1]]
+  ↳ app/views/categories/show.html.erb:6
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category_id" = $1 ORDER BY "products"."created_at" DESC[0m  [["category_id", 1]]
+  ↳ app/views/categories/show.html.erb:11
+  Rendered collection of products/_product.html.erb [6 times] (Duration: 3.7ms | Allocations: 4336)
+  Rendered categories/show.html.erb within layouts/application (Duration: 12.3ms | Allocations: 7605)
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/_top_nav.html.erb:37
+  Rendered layouts/_top_nav.html.erb (Duration: 2.2ms | Allocations: 1366)
+  Rendered layout layouts/application.html.erb (Duration: 21.2ms | Allocations: 18889)
+Completed 200 OK in 75ms (Views: 25.0ms | ActiveRecord: 15.6ms | Allocations: 23612)
+
+
+Started GET "/categories/3" for ::1 at 2024-06-02 15:31:48 -0700
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCategory Load (1.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/show.html.erb within layouts/application
+  [1m[35m (8.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE "products"."category_id" = $1[0m  [["category_id", 3]]
+  ↳ app/views/categories/show.html.erb:6
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category_id" = $1 ORDER BY "products"."created_at" DESC[0m  [["category_id", 3]]
+  ↳ app/views/categories/show.html.erb:11
+  Rendered collection of products/_product.html.erb [3 times] (Duration: 9.3ms | Allocations: 1919)
+  Rendered categories/show.html.erb within layouts/application (Duration: 23.6ms | Allocations: 3613)
+  [1m[36mCategory Load (3.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/_top_nav.html.erb:37
+  Rendered layouts/_top_nav.html.erb (Duration: 5.3ms | Allocations: 1201)
+  Rendered layout layouts/application.html.erb (Duration: 42.3ms | Allocations: 14759)
+Completed 200 OK in 53ms (Views: 30.0ms | ActiveRecord: 14.7ms | Allocations: 16171)
+
+
+Started GET "/categories/1" for ::1 at 2024-06-02 15:31:48 -0700
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/show.html.erb within layouts/application
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE "products"."category_id" = $1[0m  [["category_id", 1]]
+  ↳ app/views/categories/show.html.erb:6
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category_id" = $1 ORDER BY "products"."created_at" DESC[0m  [["category_id", 1]]
+  ↳ app/views/categories/show.html.erb:11
+  Rendered collection of products/_product.html.erb [6 times] (Duration: 6.0ms | Allocations: 3813)
+  Rendered categories/show.html.erb within layouts/application (Duration: 13.6ms | Allocations: 5529)
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/_top_nav.html.erb:37
+  Rendered layouts/_top_nav.html.erb (Duration: 2.1ms | Allocations: 1201)
+  Rendered layout layouts/application.html.erb (Duration: 28.5ms | Allocations: 16479)
+Completed 200 OK in 38ms (Views: 23.9ms | ActiveRecord: 6.3ms | Allocations: 17741)
+
+
+[dotenv] Set [36mSTRIPE_PUBLISHABLE_KEY[0m and [36mSTRIPE_SECRET_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mSTRIPE_PUBLISHABLE_KEY[0m and [36mSTRIPE_SECRET_KEY[0m
+[dotenv] Loaded [33m.env[0m
